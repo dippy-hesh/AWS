@@ -1,0 +1,72 @@
+EC2
+ec2 is also called elastic cloud compute . in corporate world application are stored in physical servers where as in cloud they are stored in virtual servers by renting them.
+we create vms by using EC2. we can also attach the storage to youe vms. manage the network connectivity we can decided what connect are allowed and what connections are not allowed.
+we can create a load balance and autoscale as well.  when ever you want to make a vm what are the things you required. 
+software operating systema and application this things can be created by using AMI amazon machine image 
+2ND  decision you need to make is instance type hardware it is nothing but cpu memory network capacity 
+next ix it will be asking to select the new key pair. it has 2 keys 1 public key which is stored in aws and another is private key which is stored with us. if you lose this private key
+you will never be able to login. then click on launch instance now vm is created. once vm is created the way to connect is by using ec2 instnace connect. if you have mac, linux or window 10 or more we use .pem
+we have window 10 and less we use .ppk
+
+
+creating a http server
+sudo su
+yum update -y
+yum install httpd
+systemctl start httpd
+systemctl enable httpd
+echo "Hello World" > /var/www/html/index.html
+please go to security group check inbound and outbound rules. 
+
+there are 3 types of ami 1 provided by aws  2 ami market place where we have custmize software 3 custmize ami which is created by or community.
+if you see there is a time out error then it is security error. if your application is giving connection refuced then it is application error. 
+
+some of the classic port to remeber:
+22 = ssh
+21 = ftp
+22 = sftp
+80 = http
+443 = https
+3389 = rdp 
+
+inbound rules are rules that rules that allow connectivty from outside into ec2 instance
+we have different types of instance family like m t n r etc 
+
+
+security group: it control inbound and outbound traffic  . key pair while connecting into vms by using ssh we dont required password we required private and public keys.
+
+
+there are 2 tpes of ip address private and public address. public are internet adddressable and private which is internal to your coprate netwrok. we can not have same 2 resource with same ip address
+but 2 diffrerent corparte network can have same private ips. when you stop a vm its public address is lost  when you start back public address will change. but when you stop or start private address will be same
+
+
+elastic ip : if you want to public ips static we use elastic ips .  they can be switched from one to another if the if the server is stopped then we can relocate them to another public ips
+you are charge if we use this elastic ips when if the servers is stopped state .   creating elastic ips go to network and security click  on elastic ip and click on allocate elastic ip address. 
+
+
+bootstarp is nothing but lunching the commands while vms starts. this script will run only once 
+
+ec2 on demand 
+pay as use for linux and window you pay per second after first mintue for other os billing will be per hour it has highesh payment but no up front payment this is used for short term.
+ec2 reserved instance 
+it has upto 72% of discount reserved for 1 or 3 years you can pay upfront partial and full they are used for staeady state like database. you can buy and sell that reserved maket place
+
+convertiable reserved instance: 
+you can chage instance typr os when ever you want you will get 66% discount 
+ec2 svaing plan:
+you have up to 72 percentage discount . commit to certain type of usage like 10$ per hour
+
+spot instance :
+we get upto 90% discount instance can be lose at any time if you max price is less then current spot price it is used to non critical like back jobs data analsis etc they are not used for database
+
+ec2 dedicated host:
+a physical server is dedicated to you. it is most espensive 
+dedicated instances
+vm is dedicated to you
+
+
+
+
+
+
+

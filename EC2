@@ -12,7 +12,7 @@ we have window 10 and less we use .ppk
 creating a http server
 sudo su
 yum update -y
-yum install httpd
+yum install httpd -y
 systemctl start httpd
 systemctl enable httpd
 echo "Hello World" > /var/www/html/index.html

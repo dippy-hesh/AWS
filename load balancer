@@ -1,0 +1,15 @@
+elb is called as elastic load balancer. lb is created is shared load between ec2s accross multiple zones in same region. it is a managed by aws platform as a service. upgrade and mainatance is takencare by aws.
+it will be autoscale based on the load. you can create a public and prviate load balancer it can do health check by creating a url to call a ec2 if the url or ec2
+is down i will distrubute the load to another ec2. there are 3 types of load balancer 
+1  classic load balancer:  it is old load balancer we are not using anymore
+2 application load balancer: to support http/https we use this. it is layer 7 load balancer it is also called ALB 
+3 netwrok load balancer : to support tcp/tls 
+4: gateway load balancer: this is used for 3rd party application.
+avaibility: is nothing application avaible to user it is mesured in percentage 99.99 is nothing but application is down like 4 1/2 downtime in a month. you application is avaiable based
+on elb and ec2 architechure.   Scalability is nothing but if there is increase in user and increase in transaction how we handle this is can be achevied by increase in ec2 size and adding new ec2
+in scaling we have 2 types
+vertical sclaing: in creasing the size of the vms but we can extend up to certaing limit and this expeensive.
+horizontal scaling : by increasing the number of vms but it need additonal infrastucture like elb etc. and we need auto scaling group based on user demand we increase and decrease instance
+ec2 tenancey - shared vs dedicated : each aws host has multiple instnace which are shared by multiple custmers 
+dedicated instance : in host all instance is dedicated specific customer you wont get access to hardware.
+dedicated host : physical server to 1 server and u will get hardware . user can access your load balancer from anywhere using http/https from load balancer your ec2 will onlt http

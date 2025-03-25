@@ -1,0 +1,2 @@
+instead of building your application in on-permise we use aws to build in cloud. you pay as you go you will pay for the service which you use. there are few resource created globally like 
+iam , rote53 etc and there are resource created regionally like ec2. 
